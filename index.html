@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sourav Mondal — AIML Engineer & Systems Architect</title>
-
+    
     <!-- Typography: Hermes Stack (Space Grotesk + Inter + JetBrains Mono + Lora) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Space+Grotesk:wght@500;600;700&display=swap"
-        rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    
     <!-- Three.js 3D Engine -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
     <style>
         /* ===== CSS RESET & SYSTEM PALETTE ===== */
-        *,
-        *::before,
-        *::after {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -58,11 +53,9 @@
         ::-webkit-scrollbar {
             width: 6px;
         }
-
         ::-webkit-scrollbar-track {
             background: transparent;
         }
-
         ::-webkit-scrollbar-thumb {
             background: var(--primary);
             border-radius: 10px;
@@ -142,7 +135,7 @@
             padding: 0 32px;
         }
 
-        /* Clean Gradient Typography Brand Logo (No SVG Icon) */
+        /* Clean Gradient Typography Brand Logo */
         .logo {
             font-family: var(--font-brand);
             font-size: 1.65rem;
@@ -302,17 +295,9 @@
             transition: all 0.3s ease;
         }
 
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
         /* ===== SECTIONS ===== */
         section {
@@ -499,7 +484,7 @@
             position: relative;
             height: 560px;
             width: 100%;
-            overflow: visible !important;
+            overflow: hidden !important;
         }
 
         #globeCanvasContainer {
@@ -507,7 +492,7 @@
             height: 100%;
             position: relative;
             cursor: grab;
-            overflow: visible !important;
+            overflow: hidden !important;
         }
 
         #globeCanvasContainer:active {
@@ -518,7 +503,6 @@
             display: block;
             width: 100% !important;
             height: 100% !important;
-            overflow: visible !important;
         }
 
         /* ===== ABOUT / ARCHITECTURE ===== */
@@ -932,29 +916,26 @@
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-
             .hero-content p {
                 margin-left: auto;
                 margin-right: auto;
             }
-
-            .hero-btns,
-            .hero-stats {
+            .hero-btns, .hero-stats {
                 justify-content: center;
             }
-
             .hero-visual {
                 order: -1;
-                height: 460px;
+                height: 400px;
             }
-
-            .about-grid,
-            .contact-grid {
+            .about-grid, .contact-grid {
                 grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 768px) {
+            .hero-visual {
+                height: 340px;
+            }
             .nav-links {
                 position: fixed;
                 top: 72px;
@@ -971,29 +952,23 @@
                 opacity: 0;
                 pointer-events: none;
             }
-
             .nav-links.open {
                 transform: translateY(0);
                 opacity: 1;
                 pointer-events: all;
             }
-
             .hamburger {
                 display: flex;
             }
-
-            .about-visual,
-            .projects-grid {
+            .about-visual, .projects-grid {
                 grid-template-columns: 1fr;
             }
-
             section {
                 padding: 85px 0 55px;
             }
         }
     </style>
 </head>
-
 <body>
 
     <!-- Ambient Bioluminescent Fireflies Canvas -->
@@ -1015,10 +990,7 @@
                 <li>
                     <div class="theme-toggle-wrapper">
                         <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Color Theme">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 3a9 9 0 0 0 0 18c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
-                            </svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
                         </button>
                         <div class="theme-dropdown" id="themeDropdown">
                             <button class="theme-option active" data-theme="matcha">
@@ -1053,10 +1025,7 @@
             <div class="hero-grid">
                 <div class="hero-content">
                     <div class="badge reveal">
-                        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor;">
-                            <path
-                                d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
-                        </svg>
+                        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor;"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
                         AIML Engineer & GenAI Architect
                     </div>
                     <h1 class="reveal" style="transition-delay:0.08s;">
@@ -1065,22 +1034,15 @@
                         <span class="sub-heading">— autonomous orchestration · high-throughput AI pipelines</span>
                     </h1>
                     <p class="reveal" style="transition-delay:0.16s;">
-                        Engineering self-correcting RAG systems, Model Context Protocol servers, autonomous desktop
-                        copilots, and deterministic agent governance frameworks.
+                        Engineering self-correcting RAG systems, Model Context Protocol servers, autonomous desktop copilots, and deterministic agent governance frameworks.
                     </p>
                     <div class="hero-btns reveal" style="transition-delay:0.24s;">
                         <a href="#projects" class="btn btn-primary">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-                            </svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
                             Explore Systems
                         </a>
                         <a href="#contact" class="btn btn-secondary">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                            </svg>
+                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                             Get in Touch
                         </a>
                     </div>
@@ -1100,7 +1062,7 @@
                     </div>
                 </div>
 
-                <!-- 3D Three.js Seamless Volumetric Planetary Spheres -->
+                <!-- 3D Three.js Fully Centered Mobile-Optimized Planetary Spheres -->
                 <div class="hero-visual reveal" style="transition-delay:0.2s;">
                     <div id="globeCanvasContainer"></div>
                 </div>
@@ -1118,16 +1080,12 @@
                         Deterministic Systems & <span class="highlight">Autonomous AI</span>
                     </h2>
                     <p class="reveal" style="transition-delay:0.16s;">
-                        Specializing in AI-driven automation, data pipelines, and system orchestration. Experienced in
-                        integrating LLMs with low-latency workflow automation to eliminate operational bottlenecks and
-                        optimize high-volume processing.
+                        Specializing in AI-driven automation, data pipelines, and system orchestration. Experienced in integrating LLMs with low-latency workflow automation to eliminate operational bottlenecks and optimize high-volume processing.
                     </p>
-
+                    
                     <div class="education-box reveal" style="transition-delay:0.2s;">
                         <h4>
-                            <svg viewBox="0 0 24 24">
-                                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
-                            </svg>
+                            <svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
                             Academic Foundation
                         </h4>
                         <p><strong>Bachelor of Computer Science Engineering with AIML</strong> (2022–2026)</p>
@@ -1148,47 +1106,31 @@
                 <div class="about-visual">
                     <div class="about-card reveal" style="transition-delay:0.1s;">
                         <div class="card-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path fill="var(--primary)"
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-                            </svg>
+                            <svg viewBox="0 0 24 24"><path fill="var(--primary)" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
                         </div>
                         <h4>GenAI & Local RAG</h4>
-                        <p>Stateful cyclic retrieval graphs with hybrid dense/sparse search and local neural
-                            cross-encoder re-ranking.</p>
+                        <p>Stateful cyclic retrieval graphs with hybrid dense/sparse search and local neural cross-encoder re-ranking.</p>
                     </div>
                     <div class="about-card reveal" style="transition-delay:0.18s;">
                         <div class="card-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path fill="var(--primary)"
-                                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z" />
-                            </svg>
+                            <svg viewBox="0 0 24 24"><path fill="var(--primary)" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
                         </div>
                         <h4>MCP Protocols</h4>
-                        <p>Hardware-aware model context protocol servers with real-time CPU, RAM, and VRAM telemetry
-                            integration.</p>
+                        <p>Hardware-aware model context protocol servers with real-time CPU, RAM, and VRAM telemetry integration.</p>
                     </div>
                     <div class="about-card reveal" style="transition-delay:0.26s;">
                         <div class="card-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path fill="var(--primary)"
-                                    d="M11 15h2v2h-2zm0-8h2v6h-2zm1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
-                            </svg>
+                            <svg viewBox="0 0 24 24"><path fill="var(--primary)" d="M11 15h2v2h-2zm0-8h2v6h-2zm1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
                         </div>
                         <h4>Pipeline Automation</h4>
-                        <p>High-throughput automated ingestion nodes, concurrent scrapers, and structured data
-                            serialization pipelines.</p>
+                        <p>High-throughput automated ingestion nodes, concurrent scrapers, and structured data serialization pipelines.</p>
                     </div>
                     <div class="about-card reveal" style="transition-delay:0.34s;">
                         <div class="card-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path fill="var(--primary)"
-                                    d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z" />
-                            </svg>
+                            <svg viewBox="0 0 24 24"><path fill="var(--primary)" d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z"/></svg>
                         </div>
                         <h4>Deterministic Governance</h4>
-                        <p>Decision-tree halting mechanisms and visual verification loops ensuring verifiable AI coding
-                            execution.</p>
+                        <p>Decision-tree halting mechanisms and visual verification loops ensuring verifiable AI coding execution.</p>
                     </div>
                 </div>
             </div>
@@ -1203,8 +1145,7 @@
                 Production-Grade <span class="highlight">Systems & Engines</span>
             </h2>
             <p class="section-desc reveal" style="transition-delay:0.14s;">
-                A showcase of self-correcting RAG architectures, hardware-aware protocol dispatchers, financial copilot
-                platforms, and autonomous tooling.
+                A showcase of self-correcting RAG architectures, hardware-aware protocol dispatchers, financial copilot platforms, and autonomous tooling.
             </p>
 
             <div class="projects-grid">
@@ -1214,36 +1155,27 @@
                         <div class="card-icon">
                             <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="32" cy="32" r="14" fill="url(#sunGrad)" />
-                                <circle cx="32" cy="32" r="24" stroke="var(--primary)" stroke-width="1.5"
-                                    stroke-dasharray="4 4" opacity="0.7" />
-                                <path
-                                    d="M32 4V12M32 52V60M4 32H12M52 32H60M12.2 12.2L17.8 17.8M46.2 46.2L51.8 51.8M12.2 51.8L17.8 46.2M46.2 17.8L51.8 12.2"
-                                    stroke="var(--primary)" stroke-width="2" stroke-linecap="round" />
+                                <circle cx="32" cy="32" r="24" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.7"/>
+                                <path d="M32 4V12M32 52V60M4 32H12M52 32H60M12.2 12.2L17.8 17.8M46.2 46.2L51.8 51.8M12.2 51.8L17.8 46.2M46.2 17.8L51.8 12.2" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/>
                                 <defs>
                                     <radialGradient id="sunGrad" cx="35%" cy="35%" r="65%">
-                                        <stop offset="0%" stop-color="#ffffff" />
-                                        <stop offset="40%" stop-color="var(--primary)" />
-                                        <stop offset="100%" stop-color="var(--primary-dark)" />
+                                        <stop offset="0%" stop-color="#ffffff"/>
+                                        <stop offset="40%" stop-color="var(--primary)"/>
+                                        <stop offset="100%" stop-color="var(--primary-dark)"/>
                                     </radialGradient>
                                 </defs>
                             </svg>
                         </div>
                         <h3>OniraRAG</h3>
-                        <p>An enterprise-grade, fully local, self-correcting agentic retrieval system. Built on stateful
-                            LangGraph cycles merging ChromaDB dense vectors with BM25 sparse lexical search, FlashRank
-                            neural cross-encoder re-ranking, and Moondream vision models for extracting embedded
-                            technical PDF diagrams.</p>
+                        <p>An enterprise-grade, fully local, self-correcting agentic retrieval system. Built on stateful LangGraph cycles merging ChromaDB dense vectors with BM25 sparse lexical search, FlashRank neural cross-encoder re-ranking, and Moondream vision models for extracting embedded technical PDF diagrams.</p>
                     </div>
                     <div>
                         <div class="tags">
                             <span>LangGraph</span><span>ChromaDB</span><span>BM25</span><span>FlashRank</span>
                         </div>
-                        <a href="https://github.com/Velocity07/OniraRAG" target="_blank" rel="noopener"
-                            class="project-link">
+                        <a href="https://github.com/Velocity07/OniraRAG" target="_blank" rel="noopener" class="project-link">
                             Inspect Repository
-                            <svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
                     </div>
                 </div>
@@ -1253,37 +1185,29 @@
                     <div>
                         <div class="card-icon">
                             <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <ellipse cx="32" cy="32" rx="28" ry="11" transform="rotate(-30 32 32)"
-                                    stroke="var(--primary)" stroke-width="1.8" opacity="0.85" />
-                                <ellipse cx="32" cy="32" rx="28" ry="11" transform="rotate(30 32 32)"
-                                    stroke="var(--primary-light)" stroke-width="1.8" stroke-dasharray="3 3"
-                                    opacity="0.6" />
+                                <ellipse cx="32" cy="32" rx="28" ry="11" transform="rotate(-30 32 32)" stroke="var(--primary)" stroke-width="1.8" opacity="0.85"/>
+                                <ellipse cx="32" cy="32" rx="28" ry="11" transform="rotate(30 32 32)" stroke="var(--primary-light)" stroke-width="1.8" stroke-dasharray="3 3" opacity="0.6"/>
                                 <circle cx="32" cy="32" r="10" fill="url(#corePlanet)" />
                                 <circle cx="48" cy="23" r="3.5" fill="#ffffff" />
                                 <defs>
                                     <radialGradient id="corePlanet" cx="30%" cy="30%" r="70%">
-                                        <stop offset="0%" stop-color="#ffffff" />
-                                        <stop offset="50%" stop-color="var(--primary)" />
-                                        <stop offset="100%" stop-color="var(--primary-dark)" />
+                                        <stop offset="0%" stop-color="#ffffff"/>
+                                        <stop offset="50%" stop-color="var(--primary)"/>
+                                        <stop offset="100%" stop-color="var(--primary-dark)"/>
                                     </radialGradient>
                                 </defs>
                             </svg>
                         </div>
                         <h3>OrbitMCP</h3>
-                        <p>Edge-native Model Context Protocol control plane and autonomous tool dispatcher. Built with a
-                            native Rust (Tauri v2) shell and Python FastMCP sidecar operating under a 100MB RAM
-                            overhead, bridging local LLMs with dynamic hardware telemetry (CPU, RAM, VRAM, I/O).</p>
+                        <p>Edge-native Model Context Protocol control plane and autonomous tool dispatcher. Built with a native Rust (Tauri v2) shell and Python FastMCP sidecar operating under a 100MB RAM overhead, bridging local LLMs with dynamic hardware telemetry (CPU, RAM, VRAM, I/O).</p>
                     </div>
                     <div>
                         <div class="tags">
                             <span>Tauri v2</span><span>Rust</span><span>FastMCP</span><span>Ollama</span>
                         </div>
-                        <a href="https://github.com/Velocity07/OrbitMCP" target="_blank" rel="noopener"
-                            class="project-link">
+                        <a href="https://github.com/Velocity07/OrbitMCP" target="_blank" rel="noopener" class="project-link">
                             Inspect Repository
-                            <svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
                     </div>
                 </div>
@@ -1293,32 +1217,24 @@
                     <div>
                         <div class="card-icon">
                             <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 48C18 36 28 42 40 24L56 12" stroke="var(--primary)" stroke-width="2.5"
-                                    stroke-linecap="round" />
+                                <path d="M8 48C18 36 28 42 40 24L56 12" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round"/>
                                 <polygon points="56,12 46,14 54,22" fill="var(--primary)" />
                                 <circle cx="16" cy="42" r="4.5" fill="var(--primary-light)" />
                                 <circle cx="32" cy="34" r="5.5" fill="url(#sunGrad)" />
                                 <circle cx="48" cy="18" r="6.5" fill="#ffffff" />
-                                <path d="M8 56H56" stroke="var(--border-color)" stroke-width="1.5"
-                                    stroke-dasharray="2 2" />
+                                <path d="M8 56H56" stroke="var(--border-color)" stroke-width="1.5" stroke-dasharray="2 2"/>
                             </svg>
                         </div>
                         <h3>fin-ai</h3>
-                        <p>Autonomous financial AI workstation and desktop copilot. Combines a lightweight Tauri v2 Rust
-                            host with React/TypeScript and a headless FastAPI backend for real-time market modeling,
-                            background Core Cache Node telemetry, and multi-LLM engine routing.</p>
+                        <p>Autonomous financial AI workstation and desktop copilot. Combines a lightweight Tauri v2 Rust host with React/TypeScript and a headless FastAPI backend for real-time market modeling, background Core Cache Node telemetry, and multi-LLM engine routing.</p>
                     </div>
                     <div>
                         <div class="tags">
-                            <span>Tauri v2</span><span>FastAPI</span><span>Financial
-                                Modeling</span><span>Multi-LLM</span>
+                            <span>Tauri v2</span><span>FastAPI</span><span>Financial Modeling</span><span>Multi-LLM</span>
                         </div>
-                        <a href="https://github.com/Velocity07/fin-ai" target="_blank" rel="noopener"
-                            class="project-link">
+                        <a href="https://github.com/Velocity07/fin-ai" target="_blank" rel="noopener" class="project-link">
                             Inspect Repository
-                            <svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
                     </div>
                 </div>
@@ -1328,29 +1244,23 @@
                     <div>
                         <div class="card-icon">
                             <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="22" cy="30" r="10" fill="url(#sunGrad)" />
-                                <circle cx="44" cy="36" r="7" fill="url(#corePlanet)" />
-                                <path d="M22 30C32 20 40 26 44 36C34 46 26 40 22 30Z" stroke="var(--primary)"
-                                    stroke-width="1.5" stroke-dasharray="3 3" />
-                                <circle cx="32" cy="18" r="2.5" fill="#ffffff" />
-                                <circle cx="34" cy="48" r="2.5" fill="var(--primary-light)" />
+                                <circle cx="22" cy="30" r="10" fill="url(#sunGrad)"/>
+                                <circle cx="44" cy="36" r="7" fill="url(#corePlanet)"/>
+                                <path d="M22 30C32 20 40 26 44 36C34 46 26 40 22 30Z" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                                <circle cx="32" cy="18" r="2.5" fill="#ffffff"/>
+                                <circle cx="34" cy="48" r="2.5" fill="var(--primary-light)"/>
                             </svg>
                         </div>
                         <h3>Lindos</h3>
-                        <p>Enterprise governance and evidence-driven skill engine for autonomous AI coding agents.
-                            Zero-dependency framework enforcing formal decision-tree halting, side-by-side DOM
-                            verification, and Test-Driven Defect Isolation to prevent assumption drift.</p>
+                        <p>Enterprise governance and evidence-driven skill engine for autonomous AI coding agents. Zero-dependency framework enforcing formal decision-tree halting, side-by-side DOM verification, and Test-Driven Defect Isolation to prevent assumption drift.</p>
                     </div>
                     <div>
                         <div class="tags">
                             <span>Agent Governance</span><span>Deterministic AI</span><span>Verification</span>
                         </div>
-                        <a href="https://github.com/Velocity07/Lindos" target="_blank" rel="noopener"
-                            class="project-link">
+                        <a href="https://github.com/Velocity07/Lindos" target="_blank" rel="noopener" class="project-link">
                             Inspect Repository
-                            <svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
                     </div>
                 </div>
@@ -1361,29 +1271,22 @@
                         <div class="card-icon">
                             <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="32" cy="32" r="12" fill="url(#corePlanet)" />
-                                <ellipse cx="32" cy="32" rx="27" ry="8" transform="rotate(-20 32 32)"
-                                    stroke="var(--primary)" stroke-width="2" />
-                                <rect x="10" y="10" width="44" height="44" rx="6" stroke="var(--primary-light)"
-                                    stroke-width="1.5" stroke-dasharray="5 3" opacity="0.6" />
-                                <circle cx="10" cy="10" r="2.5" fill="var(--primary)" />
-                                <circle cx="54" cy="54" r="2.5" fill="var(--primary)" />
+                                <ellipse cx="32" cy="32" rx="27" ry="8" transform="rotate(-20 32 32)" stroke="var(--primary)" stroke-width="2"/>
+                                <rect x="10" y="10" width="44" height="44" rx="6" stroke="var(--primary-light)" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.6"/>
+                                <circle cx="10" cy="10" r="2.5" fill="var(--primary)"/>
+                                <circle cx="54" cy="54" r="2.5" fill="var(--primary)"/>
                             </svg>
                         </div>
                         <h3>CropMeta</h3>
-                        <p>AI-powered smart agriculture architecture. Highly optimized, decoupled full-stack machine
-                            learning system (Next.js and FastAPI) computing optimal crop yields through microclimate
-                            soil telemetry, sensor analysis, and true probability mapping.</p>
+                        <p>AI-powered smart agriculture architecture. Highly optimized, decoupled full-stack machine learning system (Next.js and FastAPI) computing optimal crop yields through microclimate soil telemetry, sensor analysis, and true probability mapping.</p>
                     </div>
                     <div>
                         <div class="tags">
                             <span>Next.js</span><span>FastAPI</span><span>Soil Telemetry</span><span>Yield ML</span>
                         </div>
-                        <a href="https://github.com/Velocity07/CropMeta" target="_blank" rel="noopener"
-                            class="project-link">
+                        <a href="https://github.com/Velocity07/CropMeta" target="_blank" rel="noopener" class="project-link">
                             Inspect Repository
-                            <svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
                     </div>
                 </div>
@@ -1393,30 +1296,23 @@
                     <div>
                         <div class="card-icon">
                             <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="32" cy="32" r="8" fill="#000000" stroke="var(--primary)" stroke-width="2" />
-                                <path d="M32 8C45.25 8 56 18.75 56 32C56 40 50 48 42 52" stroke="var(--primary-light)"
-                                    stroke-width="2" stroke-linecap="round" />
-                                <path d="M32 56C18.75 56 8 45.25 8 32C8 24 14 16 22 12" stroke="var(--primary)"
-                                    stroke-width="2" stroke-linecap="round" />
-                                <circle cx="52" cy="20" r="3" fill="var(--primary)" />
-                                <circle cx="12" cy="44" r="3" fill="#ffffff" />
+                                <circle cx="32" cy="32" r="8" fill="#000000" stroke="var(--primary)" stroke-width="2"/>
+                                <path d="M32 8C45.25 8 56 18.75 56 32C56 40 50 48 42 52" stroke="var(--primary-light)" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M32 56C18.75 56 8 45.25 8 32C8 24 14 16 22 12" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="52" cy="20" r="3" fill="var(--primary)"/>
+                                <circle cx="12" cy="44" r="3" fill="#ffffff"/>
                             </svg>
                         </div>
                         <h3>Grabber</h3>
-                        <p>A reactive desktop media downloader powered by Electron and yt-dlp. Features an ultra-clean
-                            minimalist interface, native system integrations, automated CI/CD builds via GitHub Actions,
-                            and high-performance concurrent stream capture.</p>
+                        <p>A reactive desktop media downloader powered by Electron and yt-dlp. Features an ultra-clean minimalist interface, native system integrations, automated CI/CD builds via GitHub Actions, and high-performance concurrent stream capture.</p>
                     </div>
                     <div>
                         <div class="tags">
                             <span>Electron</span><span>yt-dlp</span><span>TypeScript</span><span>Desktop App</span>
                         </div>
-                        <a href="https://github.com/Velocity07/Grabber" target="_blank" rel="noopener"
-                            class="project-link">
+                        <a href="https://github.com/Velocity07/Grabber" target="_blank" rel="noopener" class="project-link">
                             Inspect Repository
-                            <svg viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
                     </div>
                 </div>
@@ -1434,17 +1330,12 @@
                         Let's build <span class="highlight">the next intelligence</span>
                     </h2>
                     <p class="reveal" style="transition-delay:0.14s;">
-                        Available for AI system architecture, enterprise agent pipelines, and high-performance
-                        engineering collaborations.
+                        Available for AI system architecture, enterprise agent pipelines, and high-performance engineering collaborations.
                     </p>
-
-                    <a href="mailto:velocitymetamite@gmail.com" class="contact-item reveal"
-                        style="transition-delay:0.2s;">
+                    
+                    <a href="mailto:velocitymetamite@gmail.com" class="contact-item reveal" style="transition-delay:0.2s;">
                         <div class="icon-box">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                            </svg>
+                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                         </div>
                         <div class="text">
                             velocitymetamite@gmail.com
@@ -1452,13 +1343,9 @@
                         </div>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/sourav-mondal-a28576404" target="_blank" rel="noopener"
-                        class="contact-item reveal" style="transition-delay:0.24s;">
+                    <a href="https://www.linkedin.com/in/sourav-mondal-a28576404" target="_blank" rel="noopener" class="contact-item reveal" style="transition-delay:0.24s;">
                         <div class="icon-box">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
+                            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </div>
                         <div class="text">
                             linkedin.com/in/sourav-mondal-a28576404
@@ -1466,13 +1353,9 @@
                         </div>
                     </a>
 
-                    <a href="https://github.com/Velocity07" target="_blank" rel="noopener" class="contact-item reveal"
-                        style="transition-delay:0.28s;">
+                    <a href="https://github.com/Velocity07" target="_blank" rel="noopener" class="contact-item reveal" style="transition-delay:0.28s;">
                         <div class="icon-box">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                            </svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                         </div>
                         <div class="text">
                             github.com/Velocity07
@@ -1487,9 +1370,7 @@
                     <input type="text" id="formSubject" placeholder="Project / Architecture Scope" required />
                     <textarea id="formMessage" placeholder="Describe your technical objectives..." required></textarea>
                     <button type="submit" class="btn btn-primary" style="align-self:flex-start;">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
-                        </svg>
+                        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
                         Dispatch Email
                     </button>
                 </form>
@@ -1501,23 +1382,11 @@
     <footer>
         <div class="container">
             <div class="socials">
-                <a href="https://github.com/Velocity07" target="_blank" rel="noopener" aria-label="GitHub"><svg
-                        viewBox="0 0 24 24">
-                        <path
-                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                    </svg></a>
-                <a href="https://www.linkedin.com/in/sourav-mondal-a28576404" target="_blank" rel="noopener"
-                    aria-label="LinkedIn"><svg viewBox="0 0 24 24">
-                        <path
-                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                    </svg></a>
-                <a href="mailto:velocitymetamite@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24">
-                        <path
-                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                    </svg></a>
+                <a href="https://github.com/Velocity07" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+                <a href="https://www.linkedin.com/in/sourav-mondal-a28576404" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                <a href="mailto:velocitymetamite@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
             </div>
-            <p>&copy; 2026 Sourav Mondal. All rights reserved.
-                systems.</p>
+            <p>&copy; 2026 Sourav Mondal. All rights regulated. Precision Hermes-stack typography & real-time WebGL systems.</p>
         </div>
     </footer>
 
@@ -1889,7 +1758,7 @@
         `;
 
         // ============================================================
-        // 4. THREE.JS 3D SCENE & OCCLUDED ORBITAL ENGINE
+        // 4. THREE.JS 3D SCENE & TRUE OCCLUDED ORBITAL ENGINE
         // ============================================================
         (function initThreeGlobe() {
             const container = document.getElementById('globeCanvasContainer');
@@ -1897,20 +1766,21 @@
 
             const scene = new THREE.Scene();
             const camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 1000);
-
+            
             function adjustCamera() {
                 const aspect = container.clientWidth / container.clientHeight;
-                camera.position.z = Math.max(9.2, 9.2 / Math.min(aspect, 1.0));
+                // Responsive camera distance: pull back slightly on mobile portrait
+                camera.position.z = aspect < 1.0 ? 11.2 : Math.max(9.2, 9.2 / Math.min(aspect, 1.0));
                 camera.position.x = 0;
                 camera.position.y = 0;
             }
             adjustCamera();
 
-            const renderer = new THREE.WebGLRenderer({
-                alpha: true,
-                antialias: true,
+            const renderer = new THREE.WebGLRenderer({ 
+                alpha: true, 
+                antialias: true, 
                 depth: true,
-                logarithmicDepthBuffer: true
+                logarithmicDepthBuffer: true 
             });
             renderer.setSize(container.clientWidth, container.clientHeight);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -1948,8 +1818,8 @@
             const curve = new THREE.EllipseCurve(0, 0, orbitRadiusX, orbitRadiusY, 0, 2 * Math.PI, false, 0);
             const points = curve.getPoints(140);
             const orbitTrackGeo = new THREE.BufferGeometry().setFromPoints(points.map(p => new THREE.Vector3(p.x, p.y, 0)));
-
-            // Orbit line depth-tested against spheres
+            
+            // Orbit line with strict depth occlusion so it NEVER cuts through the front of the sphere
             const orbitTrackMat = new THREE.LineDashedMaterial({
                 color: 0x8BC34A,
                 dashSize: 0.14,
@@ -1961,7 +1831,7 @@
             });
             const orbitLine = new THREE.Line(orbitTrackGeo, orbitTrackMat);
             orbitLine.computeLineDistances();
-            orbitLine.renderOrder = 1;
+            orbitLine.renderOrder = -1; // Render behind opaque geometries
             orbitGroup.add(orbitLine);
 
             const satelliteGroup = new THREE.Group();
@@ -2031,7 +1901,7 @@
                 satelliteSphere.rotation.y += 0.016;
                 satelliteSphere.rotation.x += 0.008;
 
-                // 3. Smooth orbital trajectory with depth occlusion
+                // 3. Smooth orbital trajectory with correct depth occlusion
                 orbitProgress += 0.0075;
                 const satX = Math.cos(orbitProgress) * orbitRadiusX;
                 const satY = Math.sin(orbitProgress) * orbitRadiusY;
@@ -2090,7 +1960,7 @@
         // ============================================================
         document.getElementById('contactForm').addEventListener('submit', (e) => {
             e.preventDefault();
-
+            
             const name = document.getElementById('formName').value.trim();
             const email = document.getElementById('formEmail').value.trim();
             const subject = document.getElementById('formSubject').value.trim();
@@ -2109,7 +1979,7 @@
                 window.location.href = mailtoUrl;
                 btn.innerHTML = 'Email Client Opened';
                 btn.style.background = 'var(--primary)';
-
+                
                 setTimeout(() => {
                     btn.innerHTML = originalHTML;
                     btn.disabled = false;
@@ -2120,5 +1990,4 @@
         });
     </script>
 </body>
-
 </html>
